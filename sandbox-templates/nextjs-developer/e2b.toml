@@ -1,0 +1,17 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (kmsxwiqh9hilgx5opvqk) or template name (garron-nextjs-developer) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("garron-nextjs-developer") # Sync sandbox
+# sandbox = await AsyncSandbox.create("garron-nextjs-developer") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('garron-nextjs-developer')
+
+team_id = "ed7de243-d1d1-4e57-879c-499ae4bc7799"
+start_cmd = "compile_page.sh"
+dockerfile = "e2b.Dockerfile"
+template_name = "garron-nextjs-developer"
+template_id = "kmsxwiqh9hilgx5opvqk"
