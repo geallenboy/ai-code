@@ -84,7 +84,7 @@ http://localhost:3000
 
 ## 🌍 联系我
 
-如果你对 AI Logo 感兴趣，或者希望合作，请随时联系我！💬
+如果你对 AI Code 项目感兴趣，或者希望合作，请随时联系我！💬
 
 📧 **Email**：[gejialun88@gmail.com](mailto:gejialun88@gmail.com)  
 🐦 **Twitter**：[gejialun88](https://x.com/gejialun88)  
