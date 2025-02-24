@@ -17,7 +17,7 @@ import ChatSettings from "@/components/chat-settings";
 import { DeepPartial } from "ai";
 import { AiCodeSchema, aiCodeSchema } from "@/lib/schema";
 import { ExecutionResult } from "@/lib/types";
-import { usePostHog } from "posthog-js/react";
+
 import { Preview } from "@/components/preview";
 
 export default function Home() {
@@ -35,8 +35,6 @@ export default function Home() {
   const [currentTab, setCurrentTab] = useState<"code" | "codeView">("code");
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
   const [result, setResult] = useState<ExecutionResult>();
-
-  const posthog = usePostHog();
 
   const setCurrentPreview = (preview: {
     aiCode: DeepPartial<AiCodeSchema> | undefined;
@@ -65,9 +63,6 @@ export default function Home() {
         const aiCode = object;
         console.log("code", aiCode);
         setIsPreviewLoading(true);
-        posthog.capture("aiCode_generated", {
-          template: aiCode?.template
-        });
 
         const response = await fetch("/api/sandbox", {
           method: "POST",
@@ -79,7 +74,6 @@ export default function Home() {
 
         const result = await response.json();
         console.log("result:", result);
-        posthog.capture("sandbox_created", { url: result.url });
 
         setResult(result);
         setCurrentPreview({ aiCode, result });
@@ -155,7 +149,7 @@ export default function Home() {
   };
 
   const handleSocialClick = (target: "github" | "x" | "discord") => {
-    posthog.capture(`${target}_click`);
+    console.log(target);
   };
   const handleSaveInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setChatInput(e.target.value);
@@ -205,11 +199,6 @@ export default function Home() {
       setChatInput("");
       setFiles([]);
       setCurrentTab("codeView");
-
-      posthog.capture("chat_submit", {
-        template: selectedTemplate,
-        model: languageModel.model
-      });
     } else {
       console.log("未登录");
       setIsAuthDialogOpen(true);

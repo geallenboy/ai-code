@@ -54,24 +54,24 @@ export function Preview({
                   <ChevronsRight className="h-5 w-5" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Close sidebar</TooltipContent>
+              <TooltipContent>关闭侧边栏</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <div className="flex justify-center">
             <TabsList className="px-1 py-0 border h-8">
               <TabsTrigger
-                value="aicode"
+                value="code"
                 className="font-normal text-xs px-2 py-1 gap-1 flex items-center"
               >
                 {isChatLoading && <LoaderCircle strokeWidth={3} className="h-3 w-3 animate-spin" />}
-                Code
+                代码
               </TabsTrigger>
               <TabsTrigger
                 value="codeView"
                 disabled={!result}
                 className="font-normal text-xs py-1 px-2 gap-1 flex items-center"
               >
-                Preview
+                预览
                 {isPreviewLoading && (
                   <LoaderCircle strokeWidth={3} className="h-3 w-3 animate-spin" />
                 )}

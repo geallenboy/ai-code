@@ -1,8 +1,8 @@
-import { ExecutionResult, ExecutionResultWeb } from "@/lib/types";
+import { ExecutionResultWeb } from "@/lib/types";
 import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
-import { RotateCcw, RotateCw } from "lucide-react";
+import { RotateCw } from "lucide-react";
 import { CopyButton } from "./copy-button";
 
 export function CodeWeb({ result }: { result: ExecutionResultWeb }) {
@@ -30,7 +30,7 @@ export function CodeWeb({ result }: { result: ExecutionResultWeb }) {
                   <RotateCw className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Refresh</TooltipContent>
+              <TooltipContent>刷新</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <span className="text-muted-foreground text-xs flex-1 text-ellipsis overflow-hidden whitespace-nowrap">
@@ -45,7 +45,7 @@ export function CodeWeb({ result }: { result: ExecutionResultWeb }) {
                   className="text-muted-foreground"
                 />
               </TooltipTrigger>
-              <TooltipContent>Copy URL</TooltipContent>
+              <TooltipContent>复制链接</TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </div>

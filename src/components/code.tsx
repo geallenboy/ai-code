@@ -44,7 +44,7 @@ export function Code({ files }: { files: { name: string; content: string }[] }) 
               <TooltipTrigger asChild>
                 <CopyButton content={currentFileContent || ""} className="text-muted-foreground" />
               </TooltipTrigger>
-              <TooltipContent side="bottom">Copy</TooltipContent>
+              <TooltipContent side="bottom">复制</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <TooltipProvider>
@@ -59,7 +59,7 @@ export function Code({ files }: { files: { name: string; content: string }[] }) 
                   <Download className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent side="bottom">Download</TooltipContent>
+              <TooltipContent side="bottom">下载</TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </div>
