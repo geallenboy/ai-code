@@ -15,7 +15,7 @@ COPY _app.tsx pages/_app.tsx
 
 RUN npx shadcn@latest init -d
 RUN npx shadcn@latest add --all
-RUN npm install posthog-js
+
 
 # Move the Nextjs app to the home directory and remove the nextjs-app directory
 RUN mv /home/user/nextjs-app/* /home/user/ && rm -rf /home/user/nextjs-app
